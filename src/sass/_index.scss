@@ -1,0 +1,201 @@
+.wrap {
+  background-color: var(--color-white);
+  padding: 2rem;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center 35%;
+  position: relative;
+}
+
+.content {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 15rem;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(transparent),
+      color-stop(30%, #adc9ec),
+      color-stop(70%, #69609e),
+      to(transparent)
+    );
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      #adc9ec 30%,
+      #69609e 70%,
+      transparent
+    );
+    bottom: -8rem;
+    z-index: 2;
+  }
+}
+
+// 標題文字 common
+.text__title {
+  &--1 {
+    @extend %ab-center;
+    z-index: 99;
+    font-size: 12rem;
+    color: transparent;
+
+    animation: color-change 10s infinite;
+  }
+
+  &--2 {
+    @extend %ab-center;
+    font-size: 12rem;
+
+    z-index: 2;
+    text-stroke: 2.5rem var(--color-white);
+    -webkit-text-stroke: 2.5rem var(--color-white);
+  }
+}
+// 第一個國 ============================================================================
+
+// 飛機
+.airplane {
+  position: relative;
+  width: 65%;
+  top: 20rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all ease-in-out 1.5s;
+
+  @include desktop {
+    width: 95%;
+  }
+}
+
+// .airplane.move {
+//   transform: translateX(-200%) translateY(-50%) rotate(10deg);
+// }
+
+.one {
+  position: relative;
+  background-image: url('../src/img/大姊_bg.jpg');
+  height: 75vh;
+
+  &__content {
+    background: url('../src/img/大姊_門.png') center center / cover;
+    background-repeat: no-repeat;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+
+    @include s_phone {
+      height: 40vh;
+    }
+  }
+
+  h1 {
+    letter-spacing: 3rem;
+
+    background-image: linear-gradient(
+      45deg,
+      var(--text-nav) 20%,
+      var(--color-white) 50%,
+      var(--text-nav) 50%,
+      var(--color-white) 70%,
+      var(--text-nav) 70%,
+      var(--color-white) 100%
+    );
+    background-clip: text;
+    background-size: 600%;
+  }
+
+  //最後一個h1
+  :last-child {
+    letter-spacing: 3rem;
+    text-stroke: 2.5rem var(--color-white);
+    -webkit-text-stroke: 2.5rem var(--color-white);
+  }
+}
+
+.two {
+  background-image: url('../src/img/二姊_bg.png');
+  background-position: center 50%;
+  position: relative;
+
+  h1 {
+    bottom: 10rem;
+    right: 5rem;
+    top: auto;
+    left: auto;
+    transform: translate(0, 0);
+    font-size: 12rem;
+    font-family: 'Playwrite FR Moderne', cursive;
+    background-image: linear-gradient(
+      45deg,
+      var(--text-nav) 20%,
+      var(--color-white) 50%,
+      var(--text-nav) 50%,
+      var(--color-white) 70%,
+      var(--text-nav) 70%,
+      var(--color-white) 100%
+    );
+    background-clip: text;
+    background-size: 600%;
+  }
+
+  //最後一個h1
+  :last-child {
+    text-stroke: 1.5rem var(--color-white);
+    -webkit-text-stroke: 1.5rem var(--color-white);
+  }
+}
+
+.three {
+  background-image: url('../src/img/我_bg.jpg');
+  background-position: center 40%;
+  position: relative;
+  // height: 75vh;
+
+  &__content {
+    background: url('../src/img/我_門.png') bottom center / contain;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0rem;
+    // transform: translateY(10%);
+    // height: 70rem;
+
+    // @include s_phone {
+    //   height: 40vh;
+    // }
+  }
+
+  h1 {
+    font-size: 8rem;
+    transform: translate(-40%, -20%);
+    font-family: 'Playwrite FR Moderne', cursive;
+    background-image: linear-gradient(
+      45deg,
+      var(--text-nav) 20%,
+      var(--color-white) 50%,
+      var(--text-nav) 50%,
+      var(--color-white) 70%,
+      var(--text-nav) 70%,
+      var(--color-white) 100%
+    );
+    background-clip: text;
+    background-size: 600%;
+  }
+
+  //最後一個h1
+  :last-child {
+    text-stroke: 1.5rem var(--color-white);
+    -webkit-text-stroke: 1.5rem var(--color-white);
+  }
+}
