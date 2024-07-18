@@ -39,6 +39,22 @@
   transform: translate(-50%, -50%);
 }
 
+@media (max-width: 61.25em) {
+  .two :last-child, .two h1, .one :last-child, .one h1, .text__title--2, .text__title--1 {
+    font-size: 8rem !important;
+  }
+}
+@media (max-width: 48.75em) {
+  .two :last-child, .two h1, .one :last-child, .one h1, .text__title--2, .text__title--1 {
+    font-size: 5rem !important;
+  }
+}
+@media (max-width: 34.37em) {
+  .two :last-child, .two h1, .one :last-child, .one h1, .text__title--2, .text__title--1 {
+    font-size: 3rem !important;
+  }
+}
+
 @keyframes color-change {
   0% {
     background-position: 0% 50%;
@@ -70,6 +86,11 @@
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+h1#hash-tag {
+  padding-top: 60px;
+  margin-top: -40px;
 }
 
 html {
@@ -153,6 +174,11 @@ p {
   left: 0rem;
   transform: translateY(-50%);
 }
+@media (max-width: 48.75em) {
+  .nav {
+    transform: translateY(-20%);
+  }
+}
 .nav__list {
   display: flex;
   flex-direction: column;
@@ -162,17 +188,43 @@ p {
   width: 100%;
   list-style: none;
   margin: 2rem 0;
-  background-color: var(--color-white);
   -webkit-clip-path: polygon(0 0, 86% 0, 100% 100%, 0% 100%);
           clip-path: polygon(0 0, 86% 0, 100% 100%, 0% 100%);
+  background-color: var(--color-white);
+  transition: all 0.3s;
+}
+@media (max-width: 48.75em) {
+  .nav__item {
+    margin: 1rem 0;
+  }
+}
+.nav__item:hover {
+  background-color: var(--text-nav);
+  width: 120%;
 }
 .nav__item a {
   display: inline-block;
   width: inherit;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 3rem 0.5rem 1.5rem;
   color: var(--text-nav);
   font-size: 4rem;
   text-decoration: none;
+  transition: inherit;
+}
+@media (max-width: 48.75em) {
+  .nav__item a {
+    font-size: 2rem;
+  }
+}
+.nav__item a:hover {
+  color: var(--color-white);
+}
+.nav__item--active {
+  background-color: var(--text-nav);
+  width: 120%;
+}
+.nav__item--active a {
+  color: var(--color-white);
 }
 
 .wrap {
@@ -230,6 +282,10 @@ section {
   }
 }
 
+.airplane.move {
+  transform: translateX(-200%) translateY(-50%) rotate(10deg);
+}
+
 .one {
   position: relative;
   background-image: url("../src/img/大姊_bg.jpg");
@@ -266,21 +322,23 @@ section {
   position: relative;
 }
 .two h1 {
+  z-index: 2;
+  position: absolute;
   bottom: 10rem;
   right: 5rem;
-  top: auto;
-  left: auto;
-  transform: translate(0, 0);
   font-size: 12rem;
   font-family: "Playwrite FR Moderne", cursive;
-  background-image: linear-gradient(45deg, var(--text-nav) 20%, var(--color-white) 50%, var(--text-nav) 50%, var(--color-white) 70%, var(--text-nav) 70%, var(--color-white) 100%);
+  background: url(../src/img/星空.jpg) no-repeat left bottom;
   -webkit-background-clip: text;
           background-clip: text;
-  background-size: 600%;
+  background-size: cover;
+  color: transparent;
 }
 .two :last-child {
-  text-stroke: 1.5rem var(--color-white);
-  -webkit-text-stroke: 1.5rem var(--color-white);
+  position: absolute;
+  z-index: 1;
+  text-stroke: 1.5rem #fff;
+  -webkit-text-stroke: 1.5rem #fff;
 }
 
 .three {
@@ -304,6 +362,28 @@ section {
   -webkit-background-clip: text;
           background-clip: text;
   background-size: 600%;
+}
+@media (max-width: 78.15em) {
+  .three h1 {
+    top: auto;
+    bottom: 25rem;
+    transform: translate(-40%, 0);
+  }
+}
+@media (max-width: 61.25em) {
+  .three h1 {
+    bottom: 18rem;
+  }
+}
+@media (max-width: 48.75em) {
+  .three h1 {
+    bottom: 15rem;
+  }
+}
+@media (max-width: 34.37em) {
+  .three h1 {
+    bottom: 12rem;
+  }
 }
 .three :last-child {
   text-stroke: 1.5rem var(--color-white);

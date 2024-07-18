@@ -27,3 +27,17 @@
   right: 0;
   bottom: 0;
 }
+
+%h1__fontSize {
+  @include pad {
+    font-size: 8rem !important;
+  }
+
+  @include phone {
+    font-size: 5rem !important;
+  }
+
+  @include s_phone {
+    font-size: 3rem !important;
+  }
+}

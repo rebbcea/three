@@ -9,6 +9,12 @@
   box-sizing: inherit;
 }
 
+h1#hash-tag {
+  // NOTE: Fix Safari not support
+  padding-top: 60px;
+  margin-top: -40px;
+}
+
 // 16px是預設,當我們想用百分比則是100%(16px)
 // 如果想呈現文字是10px,16px * ? = 10px >> 10 / 16 = 0.625 = 62.5%
 html {

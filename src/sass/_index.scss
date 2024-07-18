@@ -50,6 +50,8 @@ section {
     color: transparent;
 
     animation: color-change 10s infinite;
+
+    @extend %h1__fontSize;
   }
 
   &--2 {
@@ -59,6 +61,8 @@ section {
     z-index: 2;
     text-stroke: 2.5rem var(--color-white);
     -webkit-text-stroke: 2.5rem var(--color-white);
+
+    @extend %h1__fontSize;
   }
 }
 // 第一個國 ============================================================================
@@ -77,9 +81,9 @@ section {
   }
 }
 
-// .airplane.move {
-//   transform: translateX(-200%) translateY(-50%) rotate(10deg);
-// }
+.airplane.move {
+  transform: translateX(-200%) translateY(-50%) rotate(10deg);
+}
 
 .one {
   position: relative;
@@ -112,6 +116,8 @@ section {
     );
     background-clip: text;
     background-size: 600%;
+
+    @extend %h1__fontSize;
   }
 
   //最後一個h1
@@ -119,6 +125,8 @@ section {
     letter-spacing: 3rem;
     text-stroke: 2.5rem var(--color-white);
     -webkit-text-stroke: 2.5rem var(--color-white);
+
+    @extend %h1__fontSize;
   }
 }
 
@@ -128,30 +136,27 @@ section {
   position: relative;
 
   h1 {
+    z-index: 2;
+    position: absolute;
     bottom: 10rem;
     right: 5rem;
-    top: auto;
-    left: auto;
-    transform: translate(0, 0);
+
     font-size: 12rem;
     font-family: 'Playwrite FR Moderne', cursive;
-    background-image: linear-gradient(
-      45deg,
-      var(--text-nav) 20%,
-      var(--color-white) 50%,
-      var(--text-nav) 50%,
-      var(--color-white) 70%,
-      var(--text-nav) 70%,
-      var(--color-white) 100%
-    );
+    background: url(../src/img/星空.jpg) no-repeat left bottom;
     background-clip: text;
-    background-size: 600%;
+    background-size: cover;
+    color: transparent;
+    @extend %h1__fontSize;
   }
 
   //最後一個h1
   :last-child {
-    text-stroke: 1.5rem var(--color-white);
-    -webkit-text-stroke: 1.5rem var(--color-white);
+    position: absolute;
+    z-index: 1;
+    text-stroke: 1.5rem #fff;
+    -webkit-text-stroke: 1.5rem #fff;
+    @extend %h1__fontSize;
   }
 }
 
@@ -191,6 +196,24 @@ section {
     );
     background-clip: text;
     background-size: 600%;
+
+    @include desktop {
+      top: auto;
+      bottom: 25rem;
+      transform: translate(-40%, 0);
+    }
+
+    @include pad {
+      bottom: 18rem;
+    }
+
+    @include phone {
+      bottom: 15rem;
+    }
+
+    @include s_phone {
+      bottom: 12rem;
+    }
   }
 
   //最後一個h1

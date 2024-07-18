@@ -10,14 +10,11 @@ const obsOptions = {
 
 const indexOpen = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
 
   if (!entry.isIntersecting) {
     $('*').removeClass('dark1');
-    // airplane.classList.add('active');
   } else {
     $('*').addClass('dark1');
-    // airplane.classList.remove('active');
   }
 };
 
@@ -25,15 +22,49 @@ const indexOpen = function (entries, observer) {
 const observer = new IntersectionObserver(indexOpen, obsOptions);
 observer.observe(two__title);
 
-// observer.observe(three__title);
-
 // 卷軸往下 飛機飛走===============================================
 const airplane = document.querySelector('.airplane');
 
-// window.addEventListener('scroll', () => {
-//   if (window.pageYOffset > 50) {
-//     airplane.classList.add('move');
-//   } else {
-//     airplane.classList.remove('move');
-//   }
-// });
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 50) {
+    airplane.classList.add('move');
+  } else {
+    airplane.classList.remove('move');
+  }
+});
+
+const nav = document.querySelector('.nav');
+const nav__item = document.querySelectorAll('.nav__item');
+
+nav.addEventListener('click', function (e) {
+  clicked = e.target.closest('li');
+
+  nav__item.forEach(e => e.classList.remove('nav__item--active'));
+
+  if (clicked) {
+    clicked.classList.add('nav__item--active');
+  }
+});
+
+// let xxx = $(window).scrollTop();
+// console.log(xxx);
+
+// 隨著滾輪移動到相對應的頁數
+$(window).scroll(function () {
+  if (
+    $(window).scrollTop() >= $('.one').offset().top &&
+    $(window).scrollTop() < $('.one__content').offset().top
+  ) {
+    $('.nav__item').removeClass('nav__item--active');
+    $('.nav__item:eq(0)').addClass('nav__item--active');
+  } else if (
+    $(window).scrollTop() >= $('.one__content').offset().top &&
+    $(window).scrollTop() < $('.two__c').offset().top
+  ) {
+    $('.nav__item').removeClass('nav__item--active');
+    $('.nav__item:eq(1)').addClass('nav__item--active');
+  } else if ($(window).scrollTop() >= $('.two__c').offset().top) {
+    $('.nav__item').removeClass('nav__item--active');
+    $('.nav__item:eq(2)').addClass('nav__item--active');
+  }
+});
