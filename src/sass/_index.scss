@@ -198,21 +198,10 @@ section {
     background-size: 600%;
 
     @include desktop {
-      top: auto;
-      bottom: 25rem;
-      transform: translate(-40%, 0);
-    }
-
-    @include pad {
-      bottom: 18rem;
-    }
-
-    @include phone {
-      bottom: 15rem;
-    }
-
-    @include s_phone {
-      bottom: 12rem;
+      top: 4rem;
+      left: auto;
+      right: 2rem;
+      transform: translate(0, 0);
     }
   }
 

@@ -365,24 +365,10 @@ section {
 }
 @media (max-width: 78.15em) {
   .three h1 {
-    top: auto;
-    bottom: 25rem;
-    transform: translate(-40%, 0);
-  }
-}
-@media (max-width: 61.25em) {
-  .three h1 {
-    bottom: 18rem;
-  }
-}
-@media (max-width: 48.75em) {
-  .three h1 {
-    bottom: 15rem;
-  }
-}
-@media (max-width: 34.37em) {
-  .three h1 {
-    bottom: 12rem;
+    top: 4rem;
+    left: auto;
+    right: 2rem;
+    transform: translate(0, 0);
   }
 }
 .three :last-child {
