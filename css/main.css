@@ -39,22 +39,6 @@
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 61.25em) {
-  .two :last-child, .two h1, .one :last-child, .one h1, .text__title--2, .text__title--1 {
-    font-size: 8rem !important;
-  }
-}
-@media (max-width: 48.75em) {
-  .two :last-child, .two h1, .one :last-child, .one h1, .text__title--2, .text__title--1 {
-    font-size: 5rem !important;
-  }
-}
-@media (max-width: 34.37em) {
-  .two :last-child, .two h1, .one :last-child, .one h1, .text__title--2, .text__title--1 {
-    font-size: 3rem !important;
-  }
-}
-
 @keyframes color-change {
   0% {
     background-position: 0% 50%;
@@ -310,10 +294,47 @@ section {
           background-clip: text;
   background-size: 600%;
 }
+@media (max-width: 61.25em) {
+  .one h1 {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 48.75em) {
+  .one h1 {
+    font-size: 5rem;
+    letter-spacing: 2rem;
+  }
+}
+@media (max-width: 34.37em) {
+  .one h1 {
+    font-size: 4.5rem;
+    letter-spacing: 1rem;
+  }
+}
 .one :last-child {
   letter-spacing: 3rem;
   text-stroke: 2.5rem var(--color-white);
   -webkit-text-stroke: 2.5rem var(--color-white);
+}
+@media (max-width: 61.25em) {
+  .one :last-child {
+    text-stroke: 2rem var(--color-white);
+    -webkit-text-stroke: 2rem var(--color-white);
+  }
+}
+@media (max-width: 48.75em) {
+  .one :last-child {
+    text-stroke: 1rem var(--color-white);
+    -webkit-text-stroke: 1rem var(--color-white);
+    letter-spacing: 2rem;
+  }
+}
+@media (max-width: 34.37em) {
+  .one :last-child {
+    text-stroke: 0.5rem var(--color-white);
+    -webkit-text-stroke: 0.5rem var(--color-white);
+    letter-spacing: 1rem;
+  }
 }
 
 .two {
@@ -326,6 +347,7 @@ section {
   position: absolute;
   bottom: 10rem;
   right: 5rem;
+  font-weight: bolder;
   font-size: 12rem;
   font-family: "Playwrite FR Moderne", cursive;
   background: url(../src/img/星空.jpg) no-repeat left bottom;
@@ -334,11 +356,48 @@ section {
   background-size: cover;
   color: transparent;
 }
+.two h1 br {
+  display: none;
+}
+@media (max-width: 48.75em) {
+  .two h1 br {
+    display: inline-block;
+  }
+}
+@media (max-width: 61.25em) {
+  .two h1 {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 48.75em) {
+  .two h1 {
+    font-size: 5rem;
+    letter-spacing: 2rem;
+  }
+}
+@media (max-width: 34.37em) {
+  .two h1 {
+    font-size: 4.5rem;
+    letter-spacing: 1rem;
+  }
+}
 .two :last-child {
   position: absolute;
   z-index: 1;
   text-stroke: 1.5rem #fff;
   -webkit-text-stroke: 1.5rem #fff;
+}
+@media (max-width: 48.75em) {
+  .two :last-child {
+    text-stroke: 1rem #fff;
+    -webkit-text-stroke: 1rem #fff;
+    letter-spacing: 2rem;
+  }
+}
+@media (max-width: 34.37em) {
+  .two :last-child {
+    letter-spacing: 1rem;
+  }
 }
 
 .three {
@@ -369,6 +428,23 @@ section {
     left: auto;
     right: 2rem;
     transform: translate(0, 0);
+  }
+}
+@media (max-width: 61.25em) {
+  .three h1 {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 48.75em) {
+  .three h1 {
+    font-size: 5rem;
+    letter-spacing: 2rem;
+  }
+}
+@media (max-width: 34.37em) {
+  .three h1 {
+    font-size: 4.5rem;
+    letter-spacing: 1rem;
   }
 }
 .three :last-child {

@@ -50,8 +50,6 @@ section {
     color: transparent;
 
     animation: color-change 10s infinite;
-
-    @extend %h1__fontSize;
   }
 
   &--2 {
@@ -61,8 +59,6 @@ section {
     z-index: 2;
     text-stroke: 2.5rem var(--color-white);
     -webkit-text-stroke: 2.5rem var(--color-white);
-
-    @extend %h1__fontSize;
   }
 }
 // 第一個國 ============================================================================
@@ -117,7 +113,19 @@ section {
     background-clip: text;
     background-size: 600%;
 
-    @extend %h1__fontSize;
+    @include pad {
+      font-size: 8rem;
+    }
+
+    @include phone {
+      font-size: 5rem;
+      letter-spacing: 2rem;
+    }
+
+    @include s_phone {
+      font-size: 4.5rem;
+      letter-spacing: 1rem;
+    }
   }
 
   //最後一個h1
@@ -126,7 +134,22 @@ section {
     text-stroke: 2.5rem var(--color-white);
     -webkit-text-stroke: 2.5rem var(--color-white);
 
-    @extend %h1__fontSize;
+    @include pad {
+      text-stroke: 2rem var(--color-white);
+      -webkit-text-stroke: 2rem var(--color-white);
+    }
+
+    @include phone {
+      text-stroke: 1rem var(--color-white);
+      -webkit-text-stroke: 1rem var(--color-white);
+      letter-spacing: 2rem;
+    }
+
+    @include s_phone {
+      text-stroke: 0.5rem var(--color-white);
+      -webkit-text-stroke: 0.5rem var(--color-white);
+      letter-spacing: 1rem;
+    }
   }
 }
 
@@ -140,6 +163,7 @@ section {
     position: absolute;
     bottom: 10rem;
     right: 5rem;
+    font-weight: bolder;
 
     font-size: 12rem;
     font-family: 'Playwrite FR Moderne', cursive;
@@ -147,7 +171,28 @@ section {
     background-clip: text;
     background-size: cover;
     color: transparent;
-    @extend %h1__fontSize;
+
+    br {
+      display: none;
+
+      @include phone {
+        display: inline-block;
+      }
+    }
+
+    @include pad {
+      font-size: 8rem;
+    }
+
+    @include phone {
+      font-size: 5rem;
+      letter-spacing: 2rem;
+    }
+
+    @include s_phone {
+      font-size: 4.5rem;
+      letter-spacing: 1rem;
+    }
   }
 
   //最後一個h1
@@ -156,7 +201,16 @@ section {
     z-index: 1;
     text-stroke: 1.5rem #fff;
     -webkit-text-stroke: 1.5rem #fff;
-    @extend %h1__fontSize;
+
+    @include phone {
+      text-stroke: 1rem #fff;
+      -webkit-text-stroke: 1rem #fff;
+      letter-spacing: 2rem;
+    }
+
+    @include s_phone {
+      letter-spacing: 1rem;
+    }
   }
 }
 
@@ -202,6 +256,20 @@ section {
       left: auto;
       right: 2rem;
       transform: translate(0, 0);
+    }
+
+    @include pad {
+      font-size: 8rem;
+    }
+
+    @include phone {
+      font-size: 5rem;
+      letter-spacing: 2rem;
+    }
+
+    @include s_phone {
+      font-size: 4.5rem;
+      letter-spacing: 1rem;
     }
   }
 
